@@ -10,3 +10,11 @@ All the user needs to do it supply the stock firmware file and FC_Patcher_For DU
 You can get stock firmware using DankDroneDownloader tool https://github.com/cs2000/DankDroneDownloader
 
 This project makes use of and will download the run_me.py from FC_Patcher. https://github.com/o-gs/DJI_FC_Patcher
+
+**Dependencies**
+
+FC_Patcher_For_Dummies will walk the user through getting all the dependencies installed but there are some basic requirements 
+
+  - Windows 10 computer. This repo was designed to work on a PC running Windows natively or a Mac in Bootcamp mode https://support.apple.com/en-us/HT201468. Running Windows 10 in a VM is likely to not work as expected with FC_Patcher_For_Dummies.
+  
+  - FC_Patcher_For_Dummies requires internet access 
