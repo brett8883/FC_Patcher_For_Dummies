@@ -1,19 +1,31 @@
 @echo off
 mode con: cols=107 lines=40
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-ECHO FC_Patcher for Dummies
-echo By Brett8883
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-Echo. 
-Echo Thanks for trying FC_Patcher for Dummies!
-echo.
 IF EXIST "run_me.py" (
-  goto setup
+  goto welcome
 ) ELSE (
   wget https://github.com/o-gs/DJI_FC_Patcher/raw/master/run_me.py
 )
+:welcome
+cls
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO FC_Patcher for Dummies Set Up Widget
+echo By Brett8883
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+echo. Hi, I am the FC_Patcher for Dummies Set Up Widget. I can help you get everything set up to 
+Echo use FC_Patcher! If you already have everything set up and I told you it was ok to skip this setup 
+echo widget in the past this is where you can skip me and go straight to FC_Patcher.
+ECHO.
+ECHO Have you already set up EVERYTHING with Set Up Widget in the past?
+echo.
+Echo        1) Yes, I was told by FC_Patcher for Dummies Set Up Widget I can skip this already 
+echo        2) No, help me get set up
+echo.
+choice /C 12 /D 1 /T 99 /M "Have told you that set up can be skipped in the past?"
+If Errorlevel 2 goto setup
+If Errorlevel 1 goto ok
+
 :setup
 cls
 Echo *****************************************************************************************************
@@ -22,10 +34,9 @@ ECHO FC_Patcher for Dummies Set Up Widget
 echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO.
-ECHO Hi, I am the FC_Patcher for Dummies Set Up Widget. If this is the first time you have used 
-ECHO FC_Patcher for Dummies I can help you get things set up.
-ECHO.
+echo.
+echo Ok! I can help you get set up! Thats my job
+echo.
 echo First off FC_Patcher for Dummies requires WSL (Windows Subsystem for Linux) running on a Windows 10 PC
 echo. 
 ECHO If you don't know what WSL is or you know it is not already enabled then I can help getting it set up 
@@ -34,14 +45,10 @@ echo.
 echo.
 Echo Is WSL set up on your PC?
 echo.
-echo  1)Yes, WSL is now installed but I may need to install other dependencies
-ECHO.
-Echo  2)I don't know what the heck WSL is or I need help getting it set up 
-ECHO.
-echo  3)YES! Skip all this set up crap... This isn't my first time using FC_Patcher for Dummies 
+echo        1)Yes, WSL is now installed but I may need to install other dependencies
+Echo        2)I don't know what the heck WSL is or I need help getting it set up 
 echo.
-choice /C 123 /D 1 /T 99 /M "Is WSL set up on your PC?"
-If Errorlevel 3 goto ok
+choice /C 12 /D 1 /T 99 /M "Is WSL set up on your PC?"
 If Errorlevel 2 goto setupWSL
 If Errorlevel 1 goto CheckSystem
 
@@ -51,8 +58,8 @@ echo or wish to install them yourself you can skip this part
 echo.
 echo Would you like me to check that everything is set up?
 echo.
-echo  1)Yes, help me check everything and install if needed
-Echo  2)No,  skip this part
+echo        1)Yes, help me check everything and install if needed
+Echo        2)No,  skip this part
 echo.
 choice /C 12 /D 1 /T 99 /M "Please choose an option"
 If Errorlevel 2 goto ok
@@ -72,9 +79,9 @@ ECHO I can help you get WSL set up but you'll need admin privilege on your machi
 echo.
 echo Would you like me to help you get WSL set up?
 echo.
-echo  1)Yes, help me get WSL set up
-Echo  2)No, I'll do it myself
-echo  3)I don't have admin privilege on this machine
+echo        1)Yes, help me get WSL set up
+Echo        2)No, I'll do it myself
+echo        3)I don't have admin privilege on this machine
 echo.
 choice /C 123 /D 1 /T 99 /M "Please choose an option"
 if Errorlevel 3 goto sorry
@@ -376,10 +383,13 @@ echo If you still need to get a copy of %fw%_%AC%_dji_system.bin then you can do
 echo DankDroneDownloader https://github.com/cs2000/DankDroneDownloader
 echo.
 echo Continue once %fw%_%AC%_dji_system.bin in in the correct folder.
-Echo.
 pause
-@echo on
-wsl.exe echo python3 run_me.py %M% "$PWD"/%fw%_%AC%_dji_system.bin
-pause
+cls
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO FC_Patcher for Dummies
+echo By Brett8883
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
 wsl.exe python3 run_me.py %M% "$PWD"/%fw%_%AC%_dji_system.bin
 pause
