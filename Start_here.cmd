@@ -362,4 +362,20 @@ ECHO FC_Patcher for Dummies Set Up Widget
 echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
+Echo.
+Echo You made it!!!
+echo.
+echo we are just about ready to start FC_Patcher! Just one last thing. 
+ECHO. 
+ECho Please ensure that the fully stock version of the 
+echo %fw%_%AC%_dji_system.bin for %AC% is in your FC_Patcher_For_Dummies folder.
+echo.
+echo should be in the same folder as the Start_here.cmd 
+echo. 
+echo If you still need to get a copy of %fw%_%AC%_dji_system.bin then you can download it using 
+echo DankDroneDownloader https://github.com/cs2000/DankDroneDownloader
+echo.
+echo Continue once %fw%_%AC%_dji_system.bin in in the correct folder.
+Eco.
+pause
 wsl.exe python3 run_me.py %m% "$PWD"/%fw%_%AC%_dji_system.bin
