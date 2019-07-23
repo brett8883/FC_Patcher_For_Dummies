@@ -262,13 +262,13 @@ Echo ***************************************************************************
 Echo *****************************************************************************************************
 echo.
 echo Your system has been set up. You do not need to do this again and can skip this step in the future
-timeout 5
+timeout 3
 goto main
 
 :ok
 cls
 echo Ok but if you don't have everything installed properly this process will not work. 
-timeout 5
+timeout 3
 goto main
 
 :main
@@ -311,7 +311,7 @@ goto makepatch
 @echo off
 cls
 set AC=Spark
-set fw=V1.00.0900 
+set fw=V01.00.0900
 set M=wm100
 goto makepatch
 
@@ -336,7 +336,7 @@ goto makepatch
 @echo off
 cls
 set AC=P4
-set fw=V2.00.0700
+set fw=V02.00.0700
 set M=wm330
 goto makepatch
 
@@ -350,7 +350,7 @@ goto makepatch
 :I2
 cls
 set AC=I2
-set fw=V1.02.0200
+set fw=V01.02.0200
 set M=wm620
 goto makepatch
 
@@ -363,7 +363,7 @@ echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 Echo.
-Echo You made it!!!
+Echo You made it!
 echo.
 echo we are just about ready to start FC_Patcher! Just one last thing. 
 ECHO. 
@@ -376,6 +376,10 @@ echo If you still need to get a copy of %fw%_%AC%_dji_system.bin then you can do
 echo DankDroneDownloader https://github.com/cs2000/DankDroneDownloader
 echo.
 echo Continue once %fw%_%AC%_dji_system.bin in in the correct folder.
-Eco.
+Echo.
 pause
-wsl.exe python3 run_me.py %m% "$PWD"/%fw%_%AC%_dji_system.bin
+@echo on
+wsl.exe echo python3 run_me.py %M% "$PWD"/%fw%_%AC%_dji_system.bin
+pause
+wsl.exe python3 run_me.py %M% "$PWD"/%fw%_%AC%_dji_system.bin
+pause
